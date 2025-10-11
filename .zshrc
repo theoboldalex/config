@@ -8,6 +8,10 @@ zstyle ':vcs_info:git:*' formats '%b '
 setopt PROMPT_SUBST
 PROMPT='%F{blue}%~%f %F{green}${vcs_info_msg_0_}%f$ '
 
-export EDITOR="vim"
+# PATH
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
+# ALIAS
+alias vi="nvim"
 
 # zprof

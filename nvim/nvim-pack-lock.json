@@ -1,0 +1,16 @@
+{
+  "plugins": {
+    "blink.cmp": {
+      "version": "1.0.0 - 2.0.0"
+    },
+    "fzf-lua": [],
+    "kommentary": [],
+    "lualine.nvim": [],
+    "mellow.nvim": [],
+    "mini.icons": [],
+    "nvim-autopairs": [],
+    "nvim-treesitter": [],
+    "oil.nvim": [],
+    "vim-fugitive": []
+  }
+}
