@@ -13,5 +13,6 @@ export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 # ALIAS
 alias vi="nvim"
+alias l="ls -lah --color=auto"
 
 # zprof
