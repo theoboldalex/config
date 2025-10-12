@@ -114,11 +114,7 @@ require("mini.icons").setup()
 require("nvim-autopairs").setup()
 
 -- fzf-lua
-require("fzf-lua").setup({
-    winopts = {
-        fullscreen = true,
-    }
-})
+require("fzf-lua").setup({ winopts = { fullscreen = true } })
 vim.keymap.set("n", "<leader>sf", require('fzf-lua').files)
 vim.keymap.set("n", "<leader>sg", require('fzf-lua').live_grep)
 vim.keymap.set("n", "<leader>sb", require('fzf-lua').buffers)
