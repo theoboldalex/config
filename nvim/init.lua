@@ -119,10 +119,11 @@ require("fzf-lua").setup({
         fullscreen = true,
     }
 })
-vim.keymap.set("n", "<leader>sf", require('fzf-lua').files, { desc = "Fzf Files" })
-vim.keymap.set("n", "<leader>sg", require('fzf-lua').live_grep, { desc = "Fzf Grep" })
-vim.keymap.set("n", "<leader>sb", require('fzf-lua').buffers, { desc = "Fzf Buffers" })
-vim.keymap.set("n", "<leader>sh", require('fzf-lua').helptags, { desc = "Fzf Help" })
+vim.keymap.set("n", "<leader>sf", require('fzf-lua').files)
+vim.keymap.set("n", "<leader>sg", require('fzf-lua').live_grep)
+vim.keymap.set("n", "<leader>sb", require('fzf-lua').buffers)
+vim.keymap.set("n", "<leader>sh", require('fzf-lua').helptags)
+vim.keymap.set("n", "<leader>gg", require('fzf-lua').git_branches)
 
 -- blink.cmp
 require("blink.cmp").setup({ fuzzy = { implementation = "lua" } })
