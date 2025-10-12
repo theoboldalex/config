@@ -134,7 +134,6 @@ vim.keymap.set("n", "g[", "<cmd>diffget //2<cr>")
 vim.keymap.set("n", "g]", "<cmd>diffget //3<cr>")
 
 -- treesitter
-require("nvim-treesitter").setup()
 require("nvim-treesitter.configs").setup({
     auto_install = false,
     ignore_install = {},
