@@ -146,6 +146,7 @@ require("nvim-treesitter.configs").setup({
         "vimdoc",
         "html",
         "go",
+        "blade"
     },
     sync_install = false,
     highlight = {
