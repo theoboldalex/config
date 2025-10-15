@@ -64,6 +64,7 @@ vim.lsp.enable({
 })
 
 -- PACKAGES
+vim.keymap.set("n", "<leader>up", vim.pack.update)
 vim.pack.add({
     { src = "https://github.com/mellow-theme/mellow.nvim" },
     { src = "https://github.com/stevearc/oil.nvim" },
