@@ -8,8 +8,6 @@ end
 return {
     cmd = { "intelephense", "--stdio" },
     filetypes = { 'php' },
-    init_options = {
-        licenceKey = get_intelephense_license_key()
-    },
+    init_options = { licenceKey = get_intelephense_license_key() },
     root_markers = { "composer.json" }
 }

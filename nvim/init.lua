@@ -1,4 +1,3 @@
--- OPTIONS
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -25,12 +24,7 @@ vim.opt.hlsearch = false
 vim.opt.wildmode = 'longest:full,full'
 vim.opt.splitright = true
 vim.opt.confirm = true
-vim.opt.grepprg = "rg -S --vimgrep"
-vim.opt.grepformat = "%f:%l:%c:%m"
 
--- KEYMAP
-vim.keymap.set("n", "<leader>nf", ":find ") -- could we go plugin free?
-vim.keymap.set("n", "<leader>ng", ":grep ") -- could we go plugin free?
 vim.keymap.set("n", "<leader>[", ":call append(line('.')-1, '')<CR>")
 vim.keymap.set("n", "<leader>]", ":call append(line('.'), '')<CR>")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -45,7 +39,6 @@ vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("v", "p", '"_dP')
 
--- AUTOCMD
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     pattern = { "*.go", "*.lua" },
     callback = function()
@@ -53,7 +46,6 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     end
 })
 
--- LSP
 vim.diagnostic.config({ virtual_text = true })
 vim.lsp.config('*', { root_markers = { ".git" } })
 vim.lsp.enable({
@@ -63,7 +55,6 @@ vim.lsp.enable({
     'php',
 })
 
--- PACKAGES
 vim.keymap.set("n", "<leader>up", vim.pack.update)
 vim.pack.add({
     { src = "https://github.com/mellow-theme/mellow.nvim" },
@@ -78,20 +69,14 @@ vim.pack.add({
     { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
 })
 
--- mellow
 vim.g.mellow_bold_keywords = true
 vim.g.mellow_bold_functions = true
 vim.g.mellow_bold_variables = true
 vim.cmd.colorscheme("mellow")
 
--- oil
-require("oil").setup({
-    columns = { "icon" },
-    view_options = { show_hidden = true }
-})
+require("oil").setup({ columns = { "icon" }, view_options = { show_hidden = true } })
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
--- lualine
 require('lualine').setup({
     options = {
         theme = 'auto',
@@ -108,11 +93,9 @@ require('lualine').setup({
     },
 })
 
--- QoL
 require("mini.icons").setup()
 require("nvim-autopairs").setup()
 
--- fzf-lua
 require("fzf-lua").setup({ winopts = { fullscreen = true } })
 vim.keymap.set("n", "<leader>sf", require('fzf-lua').files)
 vim.keymap.set("n", "<leader>sg", require('fzf-lua').live_grep)
@@ -120,10 +103,8 @@ vim.keymap.set("n", "<leader>sb", require('fzf-lua').buffers)
 vim.keymap.set("n", "<leader>sh", require('fzf-lua').helptags)
 vim.keymap.set("n", "<leader>gg", require('fzf-lua').git_branches)
 
--- blink.cmp
 require("blink.cmp").setup({ fuzzy = { implementation = "lua" } })
 
--- vim-fugitive
 vim.keymap.set("n", "<leader>gb", "<cmd>Git blame -w<cr>")
 vim.keymap.set("n", "<leader>gp", "<cmd>Git push<cr>")
 vim.keymap.set("n", "<leader>gl", "<cmd>Git pull<cr>")
@@ -131,7 +112,6 @@ vim.keymap.set("n", "<leader>gs", ":0G<cr>")
 vim.keymap.set("n", "g[", "<cmd>diffget //2<cr>")
 vim.keymap.set("n", "g]", "<cmd>diffget //3<cr>")
 
--- treesitter
 require("nvim-treesitter.configs").setup({
     auto_install = false,
     ignore_install = {},
@@ -146,10 +126,7 @@ require("nvim-treesitter.configs").setup({
         "blade"
     },
     sync_install = false,
-    highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false,
-    },
+    highlight = { enable = true, additional_vim_regex_highlighting = false },
     modules = {},
     indent = { enable = true },
 })
