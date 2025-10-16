@@ -87,9 +87,7 @@ vim.cmd.colorscheme("mellow")
 -- oil
 require("oil").setup({
     columns = { "icon" },
-    view_options = {
-        show_hidden = true
-    }
+    view_options = { show_hidden = true }
 })
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
@@ -129,7 +127,6 @@ require("blink.cmp").setup({ fuzzy = { implementation = "lua" } })
 vim.keymap.set("n", "<leader>gb", "<cmd>Git blame -w<cr>")
 vim.keymap.set("n", "<leader>gp", "<cmd>Git push<cr>")
 vim.keymap.set("n", "<leader>gl", "<cmd>Git pull<cr>")
-vim.keymap.set("n", "<leader>gc", ":Git checkout ")
 vim.keymap.set("n", "<leader>gs", ":0G<cr>")
 vim.keymap.set("n", "g[", "<cmd>diffget //2<cr>")
 vim.keymap.set("n", "g]", "<cmd>diffget //3<cr>")
