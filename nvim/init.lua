@@ -103,7 +103,7 @@ vim.keymap.set("n", "<leader>sb", require('fzf-lua').buffers)
 vim.keymap.set("n", "<leader>sh", require('fzf-lua').helptags)
 vim.keymap.set("n", "<leader>gg", require('fzf-lua').git_branches)
 
-require("blink.cmp").setup({ fuzzy = { implementation = "lua" } })
+require("blink.cmp").setup({ fuzzy = { implementation = "lua" }, keymap = { preset = 'enter' } })
 
 vim.keymap.set("n", "<leader>gb", "<cmd>Git blame -w<cr>")
 vim.keymap.set("n", "<leader>gp", "<cmd>Git push<cr>")
