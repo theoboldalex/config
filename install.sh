@@ -18,3 +18,7 @@ ln -s $DOTFILES/ghostty $CONFIG/ghostty
 # nvim config
 rm -f $CONFIG/nvim
 ln -s $DOTFILES/nvim $CONFIG/nvim
+
+# scripts
+rm -rf $CONFIG/scripts
+ln -s $DOTFILES/scripts $CONFIG/scripts
