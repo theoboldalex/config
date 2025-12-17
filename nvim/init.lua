@@ -96,7 +96,13 @@ vim.keymap.set("n", "<leader>sh", require('fzf-lua').helptags)
 vim.keymap.set("n", "<leader>gg", require('fzf-lua').git_branches)
 
 -- blink
-require("blink.cmp").setup({ fuzzy = { implementation = "lua" }, keymap = { preset = 'enter' } })
+require("blink.cmp").setup({
+    fuzzy = { implementation = "lua" },
+    keymap = {
+        preset = 'enter',
+        ['<C-k>'] = { "show_documentation" }
+    }
+})
 
 -- oil
 require("oil").setup({ columns = { "icon" }, view_options = { show_hidden = true } })
