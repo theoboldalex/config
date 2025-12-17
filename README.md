@@ -14,11 +14,12 @@ installed in your environment.
 - [ghostty](https://ghostty.org/)
 - [fzf](https://github.com/junegunn/fzf)
 
-If using Neovim, you will also want to install the following LSP servers in your environment to get full LSP support for Go, JavaScript, TypeScript, PHP and Lua.
+If using Neovim, you will also want to install the following LSP servers in your environment to get full LSP support for Go, JavaScript, TypeScript, PHP, Python and Lua.
 - [Intelephense](https://intelephense.com/)
 - [Gopls](https://go.dev/gopls/)
 - [Lua LS](https://github.com/LuaLS/lua-language-server)
 - [VTSLS](https://github.com/yioneko/vtsls)
+- [Pyright](https://github.com/microsoft/pyright)
 
 > [!NOTE]  
 > If you have a paid license for Intelephense, place the license key in a `.txt` file at `$HOME/intelephense/license.txt`.
