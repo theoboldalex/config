@@ -54,7 +54,8 @@ vim.lsp.enable({
     'go',
     'javascript',
     'php',
-    'python',
+    -- 'ruff',
+    'ty',
 })
 
 vim.keymap.set("n", "<leader>up", vim.pack.update)
