@@ -54,7 +54,6 @@ vim.lsp.enable({
     'go',
     'javascript',
     'php',
-    -- 'ruff',
     'ty',
 })
 
