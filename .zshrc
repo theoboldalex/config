@@ -16,4 +16,11 @@ alias vi="nvim"
 alias l="ls -lah --color=auto"
 alias h="bash -c history_fuzzy_search.sh"
 
+. "$HOME/.local/bin/env"
+
+if [ -f $HOME/.secrets ]; then
+    source $HOME/.secrets
+fi
+
 # zprof
+
