@@ -19,7 +19,7 @@ If using Neovim, you will also want to install the following LSP servers in your
 - [Gopls](https://go.dev/gopls/)
 - [Lua LS](https://github.com/LuaLS/lua-language-server)
 - [VTSLS](https://github.com/yioneko/vtsls)
-- [Pyright](https://github.com/microsoft/pyright)
+- [ty](https://docs.astral.sh/ty/)
 
 > [!NOTE]  
 > If you have a paid license for Intelephense, place the license key in a `.txt` file at `$HOME/intelephense/license.txt`.
