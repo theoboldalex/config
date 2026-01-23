@@ -14,6 +14,14 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 (set-frame-font "Monaspace Neon 15" nil t)
 
+(setq mac-option-modifier 'meta)
+(setq mac-right-option-modifier nil)
+
+;; emacs compile window fix
+(use-package ansi-color
+    :hook (compilation-filter . ansi-color-compilation-filter))
+
+
 ;; macos
 (when (eq system-type 'darwin)
   (setq mac-command-modifier 'meta
