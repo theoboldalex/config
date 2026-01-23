@@ -22,3 +22,7 @@ ln -s $DOTFILES/nvim $CONFIG/nvim
 # scripts
 rm -rf $CONFIG/scripts
 ln -s $DOTFILES/scripts $CONFIG/scripts
+
+# emacs
+rm -rf $HOME/.emacs.d
+ln -s $DOTFILES/emacs/init.el $HOME/.emacs
