@@ -41,7 +41,7 @@ vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("v", "p", '"_dP')
 
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-    pattern = { "*.go", "*.lua" },
+    pattern = { "*.go", "*.lua", "*.js", "*.ts" },
     callback = function()
         vim.lsp.buf.format()
     end
