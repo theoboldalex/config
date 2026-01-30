@@ -13,15 +13,17 @@
 (setq create-lockfiles nil)
 (fset 'yes-or-no-p 'y-or-n-p)
 (set-frame-font "Monaspace Neon 15" nil t)
+(setq-default tab-width 4)
 
+;; fix macos option key issues
 (setq mac-option-modifier 'meta)
 (setq mac-right-option-modifier nil)
 
-;; emacs compile window fix
+;; emacs compile window and shell colors fix
 (use-package ansi-color
-    :hook (compilation-filter . ansi-color-compilation-filter))
-
-
+  :hook ((compilation-filter . ansi-color-compilation-filter)
+         (shell-mode . (lambda ()
+                         (setq-local ansi-color-for-comint-mode t)))))
 ;; macos
 (when (eq system-type 'darwin)
   (setq mac-command-modifier 'meta
@@ -44,20 +46,40 @@
 ;; This is your old M-x.
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
-;; dired
-;; (setq dired-listing-switches "-lah --group-directories-first")
-;; (add-hook 'dired-mode-hook
-;; 	  (lambda () (dired-hide-details-mode)))
+(use-package yaml-mode
+  :ensure t)
+(use-package dockerfile-mode
+  :ensure t)
+(use-package python-mode
+  :ensure t)
+(use-package php-mode
+  :ensure t)
+
+(use-package lsp-mode
+  :config
+  (setq lsp-prefer-flymake nil)
+  :hook (java-mode . lsp)
+  :commands lsp)
+(use-package lsp-java
+  :ensure t
+  :after lsp-mode
+  :config)
+(use-package company
+  :config
+  (global-company-mode)
+  (setq company-dabbrev-downcase 0)
+  (setq company-idle-delay 0))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes '(jetbrains-darcula))
+ '(custom-enabled-themes '(gruvbox-dark-medium))
  '(custom-safe-themes
-   '("9b55271bec4b2bae7eca6c96eac974b19f2f6d8cccc8fd34b30ab67220bb19d5" default))
- '(package-selected-packages '(magit smex jetbrains-darcula-theme)))
+   '("5a0ddbd75929d24f5ef34944d78789c6c3421aa943c15218bac791c199fc897d" "8363207a952efb78e917230f5a4d3326b2916c63237c1f61d7e5fe07def8d378" "261a03733c20ebcf26e6f9533359977f3040a9aa10088727893ae4954369eb43" "9b55271bec4b2bae7eca6c96eac974b19f2f6d8cccc8fd34b30ab67220bb19d5" default))
+ '(package-selected-packages
+   '(php-mode company lsp-java lsp-mode python-mode gruvbox-theme mellow-theme dockerfile-mode yaml-mode magit smex jetbrains-darcula-theme)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
