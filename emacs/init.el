@@ -17,6 +17,10 @@
 (set-frame-font "Monaspace Neon 15" nil t)
 
 ;; emacs compile window and shell colors fix
+(setq display-buffer-alist
+      '(("\\*compilation\\*"
+         (display-buffer-same-window))))
+(setq compilation-scroll-output t)
 (use-package ansi-color
   :hook ((compilation-filter . ansi-color-compilation-filter)
          (shell-mode . (lambda ()
