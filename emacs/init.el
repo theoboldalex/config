@@ -15,9 +15,6 @@
 (blink-cursor-mode -1)
 (fset 'yes-or-no-p 'y-or-n-p)
 (set-frame-font "Monaspace Neon 15" nil t)
-;; fix macos option key issues
-(setq mac-option-modifier 'meta)
-(setq mac-right-option-modifier nil)
 
 ;; emacs compile window and shell colors fix
 (use-package ansi-color
@@ -28,6 +25,7 @@
 (when (eq system-type 'darwin)
   (setq mac-command-modifier 'meta
 		mac-right-command-modifier 'super
+		mac-right-option-modifier nil
 		mac-option-modifier 'meta
 		frame-resize-pixelwise t)
   (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
