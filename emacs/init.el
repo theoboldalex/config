@@ -3,18 +3,18 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
 ;; basics
+(setq ring-bell-function 'ignore)
+(setq make-backup-files nil)
+(setq create-lockfiles nil)
+(setq-default tab-width 4)
+
 (transient-mark-mode 1)
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (blink-cursor-mode -1)
-(setq ring-bell-function 'ignore)
-(setq make-backup-files nil)
-(setq create-lockfiles nil)
 (fset 'yes-or-no-p 'y-or-n-p)
 (set-frame-font "Monaspace Neon 15" nil t)
-(setq-default tab-width 4)
-
 ;; fix macos option key issues
 (setq mac-option-modifier 'meta)
 (setq mac-right-option-modifier nil)
