@@ -64,8 +64,7 @@
   :commands lsp)
 (use-package lsp-java
   :ensure t
-  :after lsp-mode
-  :config)
+  :after lsp-mode)
 (use-package company
   :config
   (global-company-mode)
@@ -74,8 +73,8 @@
 (use-package paredit
   :ensure t
   :config
-  (add-hook 'emacs-lisp-mode-hook (paredit-mode 1))
-  (add-hook 'clojure-mode-hook (paredit-mode 1)))
+  (add-hook 'emacs-lisp-mode-hook #'enable-paredit-mode)
+  (add-hook 'clojure-mode-hook #'enable-paredit-mode))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
