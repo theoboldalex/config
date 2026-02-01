@@ -54,8 +54,6 @@
   :ensure t)
 (use-package python-mode
   :ensure t)
-(use-package php-mode
-  :ensure t)
 
 (use-package lsp-mode
   :config
