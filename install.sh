@@ -18,3 +18,10 @@ ln -s $DOTFILES/ghostty $CONFIG/ghostty
 # nvim config
 rm -f $CONFIG/nvim
 ln -s $DOTFILES/nvim $CONFIG/nvim
+
+# claude code
+mkdir -p $HOME/.claude
+for f in settings.json statusline-command.sh; do
+  rm -f $HOME/.claude/$f
+  ln -s $DOTFILES/claude/$f $HOME/.claude/$f
+done
