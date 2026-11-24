@@ -3,6 +3,7 @@ brew "gh"
 brew "jq"
 brew "fzf"
 brew "ripgrep"   # required by .vimrc (grepprg)
+brew "neovim"
 
 # Apps
 cask "ghostty"
