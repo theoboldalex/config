@@ -10,11 +10,4 @@ return {
         'selene.toml',
         'selene.yml',
     },
-    -- Neovim config: LuaJIT runtime and the `vim` API, so `vim` isn't an undefined global.
-    settings = {
-        Lua = {
-            runtime = { version = 'LuaJIT' },
-            workspace = { checkThirdParty = false, library = { vim.env.VIMRUNTIME } },
-        },
-    },
 }
