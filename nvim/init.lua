@@ -55,6 +55,7 @@ vim.lsp.enable({
     'javascript',
     'php',
     'ty',
+    'clangd'
 })
 
 vim.keymap.set("n", "<leader>up", vim.pack.update)
