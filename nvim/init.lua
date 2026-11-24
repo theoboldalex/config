@@ -41,7 +41,7 @@ vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("v", "p", '"_dP')
 
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-    pattern = { "*.go", "*.lua", "*.js", "*.ts" },
+    pattern = { "*.lua" },
     callback = function()
         vim.lsp.buf.format()
     end
@@ -49,13 +49,7 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 
 vim.diagnostic.config({ virtual_text = true })
 vim.lsp.config('*', { root_markers = { ".git" } })
-vim.lsp.enable({
-    'lua',
-    'go',
-    'javascript',
-    'php',
-    'ty',
-})
+vim.lsp.enable({ 'clangd', 'lua' })
 
 vim.keymap.set("n", "<leader>up", vim.pack.update)
 vim.pack.add({
@@ -88,7 +82,7 @@ vim.g.mellow_bold_variables = true
 vim.cmd.colorscheme("mellow")
 
 -- fzf
-require("fzf-lua").setup({ winopts = { fullscreen = true } })
+require("fzf-lua").setup({ { "default-title" }, winopts = { fullscreen = true } })
 vim.keymap.set("n", "<leader>sf", require('fzf-lua').files)
 vim.keymap.set("n", "<leader>sg", require('fzf-lua').live_grep)
 vim.keymap.set("n", "<leader>sb", require('fzf-lua').buffers)
@@ -112,8 +106,8 @@ vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 require('lualine').setup({
     options = {
         theme = 'auto',
-        section_separators = '',
-        component_separators = '',
+        --[[ section_separators = '',
+        component_separators = '', ]]
     },
     sections = {
         lualine_a = { 'mode' },
@@ -129,16 +123,7 @@ require('lualine').setup({
 require("nvim-treesitter.configs").setup({
     auto_install = false,
     ignore_install = {},
-    ensure_installed = {
-        "lua",
-        "php",
-        "typescript",
-        "javascript",
-        "vimdoc",
-        "html",
-        "go",
-        "blade"
-    },
+    ensure_installed = { "c", "lua" },
     sync_install = false,
     highlight = { enable = true, additional_vim_regex_highlighting = false },
     modules = {},
