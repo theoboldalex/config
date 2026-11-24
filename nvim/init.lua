@@ -40,9 +40,16 @@ vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("v", "p", '"_dP')
 
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+    pattern = { "*.lua" },
+    callback = function()
+        vim.lsp.buf.format()
+    end
+})
+
 vim.diagnostic.config({ virtual_text = true })
 vim.lsp.config('*', { root_markers = { ".git" } })
-vim.lsp.enable('clangd')
+vim.lsp.enable({ 'clangd', 'lua' })
 
 vim.keymap.set("n", "<leader>up", vim.pack.update)
 vim.pack.add({
