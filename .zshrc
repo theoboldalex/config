@@ -11,7 +11,7 @@ setopt PROMPT_SUBST
 PROMPT='%F{blue}%~%f %F{green}${vcs_info_msg_0_}%f$ '
 
 # ALIAS
-alias vi="vim"
+alias vi="nvim"
 alias l="ls -lah --color=auto"
 
 if [ -f "$HOME/.local/bin/env" ]; then
