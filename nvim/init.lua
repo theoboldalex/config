@@ -123,7 +123,7 @@ require('lualine').setup({
 require("nvim-treesitter.configs").setup({
     auto_install = false,
     ignore_install = {},
-    ensure_installed = { "c" },
+    ensure_installed = { "c", "lua" },
     sync_install = false,
     highlight = { enable = true, additional_vim_regex_highlighting = false },
     modules = {},
