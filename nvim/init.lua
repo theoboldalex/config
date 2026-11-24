@@ -40,22 +40,9 @@ vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("v", "p", '"_dP')
 
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-    pattern = { "*.lua", "*.js", "*.ts", "*.jsx", "*.tsx" },
-    callback = function()
-        vim.lsp.buf.format()
-    end
-})
-
 vim.diagnostic.config({ virtual_text = true })
 vim.lsp.config('*', { root_markers = { ".git" } })
-vim.lsp.enable({
-    'lua_ls',
-    'vtsls',
-    'vue_ls',
-    'intelephense',
-    'clangd'
-})
+vim.lsp.enable('clangd')
 
 vim.keymap.set("n", "<leader>up", vim.pack.update)
 vim.pack.add({
@@ -69,7 +56,6 @@ vim.pack.add({
     { src = "https://github.com/Saghen/blink.cmp",               version = vim.version.range("1.*") },
     { src = "https://github.com/tpope/vim-fugitive" },
     { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
-    { src = "https://github.com/neovim/nvim-lspconfig" },
 })
 require("mini.icons").setup()
 require("nvim-autopairs").setup()
@@ -130,16 +116,7 @@ require('lualine').setup({
 require("nvim-treesitter.configs").setup({
     auto_install = false,
     ignore_install = {},
-    ensure_installed = {
-        "lua",
-        "php",
-        "typescript",
-        "javascript",
-        "vimdoc",
-        "html",
-        "vue",
-        "blade"
-    },
+    ensure_installed = { "c" },
     sync_install = false,
     highlight = { enable = true, additional_vim_regex_highlighting = false },
     modules = {},
