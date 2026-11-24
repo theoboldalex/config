@@ -1,8 +1,11 @@
 {
   "model": "opus",
+  "statusLine": {
+    "type": "command",
+    "command": "bash ~/.claude/statusline-command.sh"
+  },
   "enabledPlugins": {
-    "ponytail@ponytail": true,
-    "gopls-lsp@claude-plugins-official": true
+    "ponytail@ponytail": true
   },
   "extraKnownMarketplaces": {
     "ponytail": {
@@ -20,9 +23,5 @@
       }
     }
   },
-  "theme": "dark",
-  "statusLine": {
-    "type": "command",
-    "command": "bash ~/.claude/statusline-command.sh"
-  }
+  "theme": "dark"
 }

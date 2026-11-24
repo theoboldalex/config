@@ -1,25 +1,29 @@
 {
   "plugins": {
     "blink.cmp": {
-      "rev": "327fff9",
+      "rev": "4b18c32",
       "version": "1.0.0 - 2.0.0"
     },
     "fzf-lua": {
-      "rev": "83e4080"
+      "rev": "d9508cc"
     },
     "kommentary": [],
     "lualine.nvim": {
-      "rev": "e533fac"
+      "rev": "47f91c4"
     },
     "mellow.nvim": [],
-    "mini.icons": [],
+    "mini.icons": {
+      "rev": "5b9076d"
+    },
     "nvim-autopairs": {
-      "rev": "7a2c97c"
+      "rev": "59bce2e"
     },
     "nvim-treesitter": [],
     "oil.nvim": {
-      "rev": "7194872"
+      "rev": "0fcc838"
     },
-    "vim-fugitive": []
+    "vim-fugitive": {
+      "rev": "3b753cf"
+    }
   }
 }
