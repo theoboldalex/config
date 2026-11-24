@@ -9,12 +9,10 @@ PROMPT='%F{blue}%~%f %F{green}${vcs_info_msg_0_}%f$ '
 
 # PATH
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-export PATH="$HOME/.config/scripts:$PATH"
 
 # ALIAS
 alias vi="nvim"
 alias l="ls -lah --color=auto"
-alias h="bash -c history_fuzzy_search.sh"
 
 . "$HOME/.local/bin/env"
 
